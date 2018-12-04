@@ -8,4 +8,9 @@ describe("TicTacToe", function() {
   it("Player one makes first", function() {
     expect(game.currentPlayer()).toEqual("Player 1")
   })
+
+  it("switches players after one move", function() {
+    game.makeMove("X")
+    expect(game.currentPlayer()).toEqual("Player 2")
+  })
 })
