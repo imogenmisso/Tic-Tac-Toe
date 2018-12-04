@@ -10,7 +10,7 @@ describe("TicTacToe", function() {
   })
 
   it("switches players after one move", function() {
-    game.makeMove("X")
+    game.switchPlayer()
     expect(game.currentPlayer()).toEqual("Player 2")
   })
 })
