@@ -7,7 +7,7 @@ Game.prototype.currentPlayer = function () {
   return this.player;
 };
 
-Game.prototype.switchPlayer = function(selection) {
+Game.prototype.switchPlayer = function() {
   if (this.player === "Player 1") {
     this.player = "Player 2"
   } else {
