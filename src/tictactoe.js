@@ -29,7 +29,6 @@ Game.prototype.switchPlayer = function() {
 
 Game.prototype.makeMove = function(player, square) {
   this.board[square] = player
-  console.log(this.board)
   this.moveCounter++
 }
 
@@ -43,8 +42,10 @@ Game.prototype.win = function() {
     var sequence = this.wins[i];
     var combination = this.board[sequence[0]] + this.board[sequence[1]] + this.board[sequence[2]];
     if (combination === "XXX") {
+      this.resetGame()
       return "Player 1 wins!"
     } else if (combination === "OOO") {
+      this.resetGame()
       return "Player 2 wins!"
     }
   }
