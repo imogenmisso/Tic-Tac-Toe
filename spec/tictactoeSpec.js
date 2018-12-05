@@ -17,4 +17,9 @@ describe("TicTacToe", function() {
   it("starts with an empty board", function() {
     expect(game.board).toEqual(["", "", "", "", "", "", "", "", ""])
   })
+
+  it("inputs the move to the board at the correct position", function() {
+    game.makeMove("X", 2)
+    expect(game.board).toEqual(["", "", "X", "", "", "", "", "", ""])
+  })
 })

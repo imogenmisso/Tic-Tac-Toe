@@ -15,3 +15,8 @@ Game.prototype.switchPlayer = function() {
     this.player = "Player 1"
   }
 }
+
+Game.prototype.makeMove = function(player, square) {
+  this.board[square] = player
+  this.moveCounter++
+}
