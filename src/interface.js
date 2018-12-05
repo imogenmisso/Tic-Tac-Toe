@@ -6,25 +6,11 @@ $(document).ready(function() {
       if (game.currentPlayer() === "Player 1") {
         document.getElementById(event.target.id).innerHTML = "X"
         game.makeMove("X", event.target.id)
-        if (game.win() === "Player 1 wins!") {
-          $("#winner").text("Player 1 wins!")
-          showButton()
-          haltGame()
-        } else if (game.draw() === true) {
-          $("#winner").text("Draw!")
-          showButton()
-        }
+        announceWinner("1")
       } else {
         document.getElementById(event.target.id).innerHTML = "O"
         game.makeMove("O", event.target.id)
-        if (game.win() === "Player 2 wins!") {
-          $("#winner").text("Player 2 wins!")
-          showButton()
-          haltGame()
-        } else if (game.draw() === true) {
-          $("#winner").text("Draw!")
-          showButton()
-        }
+        announceWinner("2")
       }
       game.switchPlayer();
     }})
@@ -34,8 +20,15 @@ $(document).ready(function() {
     wipeBoard()
   })
 
-  function showButton() {
-    $("#restart").show();
+  function announceWinner(player) {
+    if (game.win() === `Player ${player} wins!`) {
+      $("#winner").text(`Player ${player} wins!`)
+      $("#restart").show();
+      haltGame()
+    } else if (game.draw() === true) {
+        $("#winner").text("Draw!")
+        $("#restart").show();
+    }
   }
 
   function wipeBoard() {
