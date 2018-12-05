@@ -9,6 +9,7 @@ $(document).ready(function() {
         if (game.win() === "Player 1 wins!") {
           $("#winner").text("Player 1 wins!")
           showButton()
+          haltGame()
         }
       } else {
         document.getElementById(event.target.id).innerHTML = "O"
@@ -16,6 +17,7 @@ $(document).ready(function() {
         if (game.win() === "Player 2 wins!") {
           $("#winner").text("Player 2 wins!")
           showButton()
+          haltGame()
         }
       }
       game.switchPlayer();
@@ -32,5 +34,13 @@ $(document).ready(function() {
 
   function wipeBoard() {
     location.reload();
+  }
+
+  function haltGame() {
+    for (var i=0; i<9; i++) {
+      if (game.board[i] === "") {
+        game.board[i] = "   "
+      }
+    }
   }
 })
