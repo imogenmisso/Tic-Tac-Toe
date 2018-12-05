@@ -10,6 +10,9 @@ $(document).ready(function() {
           $("#winner").text("Player 1 wins!")
           showButton()
           haltGame()
+        } else if (game.draw() === true) {
+          $("#winner").text("Draw!")
+          showButton()
         }
       } else {
         document.getElementById(event.target.id).innerHTML = "O"
@@ -18,6 +21,9 @@ $(document).ready(function() {
           $("#winner").text("Player 2 wins!")
           showButton()
           haltGame()
+        } else if (game.draw() === true) {
+          $("#winner").text("Draw!")
+          showButton()
         }
       }
       game.switchPlayer();
