@@ -21,3 +21,12 @@ Build the business logic for a game of tic tac toe. It should be easy to impleme
 
 I decided to start by test-driving the game logic for this application. After writing the first couple of tests I then began implementing the User Interface. This guided the design of my application and helped me understand which methods were necessary in the back-end to ensure the front-end worked as desired.
 
+## How to run my code
+
+* `git clone` https://github.com/imogenmisso/Tic-Tac-Toe
+* run `open src/index.html`
+* to run the tests: `open SpecRunner.html`
+
+## What it looks like!
+
+![tictactoeBoard](tictactoeBoard.png)
