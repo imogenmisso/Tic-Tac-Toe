@@ -22,4 +22,23 @@ describe("TicTacToe", function() {
     game.makeMove("X", 2)
     expect(game.board).toEqual(["", "", "X", "", "", "", "", "", ""])
   })
+
+  it("checks to see if player1 has won", function() {
+    game.makeMove("X", 0)
+    game.makeMove("O", 1)
+    game.makeMove("X", 4)
+    game.makeMove("O", 7)
+    game.makeMove("X", 8)
+    expect(game.win()).toEqual("Player 1 wins!")
+  })
+
+  it("checks to see if player2 has won", function() {
+    game.makeMove("X", 0)
+    game.makeMove("O", 1)
+    game.makeMove("X", 2)
+    game.makeMove("O", 4)
+    game.makeMove("X", 8)
+    game.makeMove("O", 7)
+    expect(game.win()).toEqual("Player 2 wins!")
+  })
 })

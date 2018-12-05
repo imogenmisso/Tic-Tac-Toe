@@ -2,6 +2,17 @@ function Game() {
   this.player = "Player 1";
   this.board = ["", "", "", "", "", "", "", "", ""];
   this.moveCounter = 0;
+  this.wins = [
+      ["0", "1", "2"],
+      ["3", "4", "5"],
+      ["6", "7", "8"],
+      ["0", "3", "6"],
+      ["1", "4", "7"],
+      ["2", "5", "8"],
+      ["3", "4", "5"],
+      ["0", "4", "8"],
+      ["6", "4", "2"]
+    ]
 }
 
 Game.prototype.currentPlayer = function () {
@@ -19,4 +30,16 @@ Game.prototype.switchPlayer = function() {
 Game.prototype.makeMove = function(player, square) {
   this.board[square] = player
   this.moveCounter++
+}
+
+Game.prototype.win = function() {
+  for (var i in this.wins) {
+    var sequence = this.wins[i];
+    var combination = this.board[sequence[0]] + this.board[sequence[1]] + this.board[sequence[2]];
+    if (combination === "XXX") {
+      return "Player 1 wins!"
+    } else if (combination === "OOO") {
+      return "Player 2 wins!"
+    }
+  }
 }
