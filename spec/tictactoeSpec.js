@@ -13,4 +13,8 @@ describe("TicTacToe", function() {
     game.switchPlayer()
     expect(game.currentPlayer()).toEqual("Player 2")
   })
+
+  it("starts with an empty board", function() {
+    expect(game.board).toEqual(["", "", "", "", "", "", "", "", ""])
+  })
 })

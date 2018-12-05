@@ -1,5 +1,6 @@
 function Game() {
   this.player = "Player 1";
+  this.board = ["", "", "", "", "", "", "", "", ""];
   this.moveCounter = 0;
 }
 
@@ -13,5 +14,4 @@ Game.prototype.switchPlayer = function() {
   } else {
     this.player = "Player 1"
   }
-  this.moveCounter++
 }
