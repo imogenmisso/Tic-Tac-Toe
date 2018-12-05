@@ -41,4 +41,9 @@ describe("TicTacToe", function() {
     game.makeMove("O", 7)
     expect(game.win()).toEqual("Player 2 wins!")
   })
+
+  it("resets the board after someone has won", function() {
+    game.win()
+    expect(game.board).toEqual(["", "", "", "", "", "", "", "", ""])
+  })
 })

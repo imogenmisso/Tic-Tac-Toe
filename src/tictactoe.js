@@ -29,7 +29,13 @@ Game.prototype.switchPlayer = function() {
 
 Game.prototype.makeMove = function(player, square) {
   this.board[square] = player
+  console.log(this.board)
   this.moveCounter++
+}
+
+Game.prototype.resetGame = function() {
+  this.board = ["", "", "", "", "", "", "", "", ""];
+  this.player = "Player 1"
 }
 
 Game.prototype.win = function() {
