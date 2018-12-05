@@ -37,6 +37,10 @@ Game.prototype.resetGame = function() {
   this.player = "Player 1"
 }
 
+Game.prototype.draw = function() {
+  return this.moveCounter === 9
+}
+
 Game.prototype.win = function() {
   for (var i in this.wins) {
     var sequence = this.wins[i];

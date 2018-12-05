@@ -51,4 +51,17 @@ describe("TicTacToe", function() {
     game.win()
     expect(game.currentPlayer()).toEqual("Player 1")
   })
+
+  it("calls a draw if no one wins", function() {
+    game.makeMove("X", 0)
+    game.makeMove("X", 1)
+    game.makeMove("O", 2)
+    game.makeMove("O", 3)
+    game.makeMove("O", 4)
+    game.makeMove("X", 5)
+    game.makeMove("X", 6)
+    game.makeMove("O", 7)
+    game.makeMove("X", 8)
+    expect(game.draw()).toBe(true)
+  })
 })
