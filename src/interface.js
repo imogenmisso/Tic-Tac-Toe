@@ -23,10 +23,14 @@ $(document).ready(function() {
 
   $("#restart").click(function() {
     game.resetGame();
+    wipeBoard()
   })
 
   function showButton() {
     $("#restart").show();
   }
 
+  function wipeBoard() {
+    location.reload();
+  }
 })
